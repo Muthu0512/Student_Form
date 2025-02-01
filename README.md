@@ -1,1 +1,1 @@
-# Student_Form
+The Student Input Form is a simple web application designed to collect, display, edit, and delete student information dynamically using HTML, CSS, and JavaScript. It allows users to input data such as name, age, email, date of birth, and  gender with options to manage the data in a tabular format.
