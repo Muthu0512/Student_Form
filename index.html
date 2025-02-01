@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studend Registration Form</title>
+
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 50%;
+        padding: 20px;
+        height: 60vh;
+        background-color: wheat;
+        color:firebrick;
+      }
+      table {
+        margin-top: 5%;
+        width: 70%;
+        border-collapse: collapse;
+        height: 10vh;
+        text-align: center;
+        background-color: olive;
+        color: black;
+        
+      }
+      th,
+      td {
+        border: solid black 1px;
+        padding: 5px;
+        
+      }
+      h2{
+        color: teal;
+      }
+      #subBtn{
+        background-color: orange;
+        padding: 10px 10px  ;
+        border: none;
+        border-radius: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend><h2>STUDENT FORM</h2></legend>
+      <section id="form">
+        <form id="studentForm">
+          <label for="name">Name :</label>
+          <input type="text" id="name" />
+          <label for="age">Age :</label>
+          <input type="number" id="age" />
+          <label for="email">Email :</label>
+          <input type="email" id="email" />
+          <label for="dob">DOB :</label>
+          <input type="date" id="dob" />
+          <label for="gender">Gender</label>
+          <select id="gender">
+            <option></option>
+            <option>MALE</option>
+            <option>FEMALE</option>
+            <option>OTHERS</option>
+          </select>
+          <div>
+            <button type="submit" id="subBtn">submit</button>
+          </div>
+        </form>
+      </section>
+    </fieldset>
+
+    <section id="table">
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Gender</th>
+
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
