@@ -57,23 +57,23 @@
       <section id="form">
         <form id="studentForm">
           <label for="name">Name :</label>
-          <input type="text" id="name" />
+          <input type="text" id="name" required />
           <label for="age">Age :</label>
-          <input type="number" id="age" />
+          <input type="number" id="age" required/>
           <label for="email">Email :</label>
-          <input type="email" id="email" />
+          <input type="email" id="email" required />
           <label for="dob">DOB :</label>
-          <input type="date" id="dob" />
+          <input type="date" id="dob"  required/>
           <label for="gender">Gender</label>
-          <select id="gender">
+          <select id="gender" required>
             <option></option>
             <option>MALE</option>
             <option>FEMALE</option>
             <option>OTHERS</option>
           </select>
-          <label class="radio-grp"
-            >User <input type="radio" name="user" value="Student" />Studend
-            <input type="radio" name="user" value="Tutor" />Tutor
+          <label class="radio-grp" 
+            >User <input type="radio" name="user" value="Student" required/>Studend
+            <input type="radio" name="user" value="Tutor" required/>Tutor
           </label>
           <div>
             <button type="submit" id="subBtn">Submit</button>
