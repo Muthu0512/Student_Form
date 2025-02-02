@@ -6,38 +6,46 @@
     <title>Studend Registration Form</title>
 
     <style>
+      fieldset {
+        text-align: center;
+        height: 80vh;
+      }
       form {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         gap: 10px;
         width: 50%;
         padding: 20px;
-        height: 60vh;
         background-color: wheat;
-        color:firebrick;
+        color: firebrick;
+        margin-left: 20%;
       }
+
       table {
-        margin-top: 5%;
+        margin-bottom: -5%;
         width: 70%;
         border-collapse: collapse;
         height: 10vh;
         text-align: center;
         background-color: olive;
         color: black;
-        
+        margin:5% 10% 5% 10%
+       
       }
       th,
       td {
         border: solid black 1px;
         padding: 5px;
-        
+        margin-bottom: 20%;
       }
-      h2{
+      h2 {
         color: teal;
       }
-      #subBtn{
+      #subBtn {
         background-color: orange;
-        padding: 10px 10px  ;
+        padding: 10px 10px;
         border: none;
         border-radius: 20%;
       }
@@ -63,8 +71,12 @@
             <option>FEMALE</option>
             <option>OTHERS</option>
           </select>
+          <label class="radio-grp"
+            >User <input type="radio" name="user" value="Student" />Studend
+            <input type="radio" name="user" value="Tutor" />Tutor
+          </label>
           <div>
-            <button type="submit" id="subBtn">submit</button>
+            <button type="submit" id="subBtn">Submit</button>
           </div>
         </form>
       </section>
@@ -79,7 +91,7 @@
             <th>Email</th>
             <th>DOB</th>
             <th>Gender</th>
-
+            <th>User</th>
             <th>Action</th>
           </tr>
         </thead>

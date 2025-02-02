@@ -2,6 +2,8 @@ const studentForm = document.getElementById("studentForm");
 const studentTable = document.getElementById("studentTable").getElementsByTagName("tbody")[0];
 const subBtn = document.getElementById("subBtn");
 
+
+
 let editIdx = null;
 
 const deleteRow = (idx) => {
@@ -15,11 +17,22 @@ const editRow = (idx) => {
   document.getElementById("email").value = selectedCells.cells[2].textContent;
   document.getElementById("dob").value = selectedCells.cells[3].textContent;
   document.getElementById("gender").value = selectedCells.cells[4].textContent;
+  
+
+  const radioBtn=document.getElementsByName("user")
+
+  for (let radio of radioBtn){
+    if(radio.value===selectedCells.cells[5].textContent){
+      radio.checked=true;
+
+      break;
+    }
+  }
   editIdx = idx;
   subBtn.textContent = "Update";
 };
 
-const updateRow = (name, age, email, dob, gender) => {
+const updateRow = (name, age, email, dob, gender,user) => {
   const updatedCells = studentTable.rows[editIdx];
 
   updatedCells.cells[0].textContent = name;
@@ -27,19 +40,22 @@ const updateRow = (name, age, email, dob, gender) => {
   updatedCells.cells[2].textContent = email;
   updatedCells.cells[3].textContent = dob;
   updatedCells.cells[4].textContent = gender;
+  updatedCells.cells[5].textContent = user;
 
-  subBtn.textContent = "submit";
+  subBtn.textContent = "Submit";
+  editIdx=null
 };
 
-const addRow = (name, age, email, dob, gender) => {
+const addRow = (name, age, email, dob, gender,user) => {
   const newRow = studentTable.insertRow();
   newRow.insertCell(0).textContent = name;
   newRow.insertCell(1).textContent = age;
   newRow.insertCell(2).textContent = email;
   newRow.insertCell(3).textContent = dob;
   newRow.insertCell(4).textContent = gender;
+  newRow.insertCell(5).textContent = user;
 
-  const actionCells = newRow.insertCell(5);
+  const actionCells = newRow.insertCell(6);
 
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "DELETE";
@@ -75,11 +91,17 @@ studentForm.addEventListener("submit", (e) => {
   const email = document.getElementById("email").value;
   const dob = document.getElementById("dob").value;
   const gender = document.getElementById("gender").value;
+  const user = document.querySelector('input[name="user"]:checked')?.value || "";
+
+
+  
 
   if (editIdx != null) {
-    updateRow(name, age, email, dob, gender);
+    updateRow(name, age, email, dob, gender,user);
   } else {
-    addRow(name, age, email, dob, gender);
+    addRow(name, age, email, dob, gender,user);
   }
   studentForm.reset();
 });
+
+
