@@ -18,7 +18,6 @@ const editRow = (idx) => {
   document.getElementById("dob").value = selectedCells.cells[3].textContent;
   document.getElementById("gender").value = selectedCells.cells[4].textContent;
   
-
   const radioBtn=document.getElementsByName("user")
 
   for (let radio of radioBtn){
