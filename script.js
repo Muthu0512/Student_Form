@@ -91,7 +91,7 @@ studentForm.addEventListener("submit", (e) => {
   const dob = document.getElementById("dob").value;
   const gender = document.getElementById("gender").value;
   const user = document.querySelector('input[name="user"]:checked')?.value || "";
-
+  
 
   
 
